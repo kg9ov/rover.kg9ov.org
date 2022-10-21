@@ -1,0 +1,12 @@
+baseURL: https://rover.kg9ov.org/
+languageCode: en-us
+title: KG9OV/R
+
+disableKinds:
+  # taxonomies
+  - taxonomy
+  - term
+  # rss
+  - RSS
+  # sitemap.xml
+  - sitemap

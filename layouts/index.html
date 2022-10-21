@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+        {{ range .Site.RegularPages }}
+            <div class="col">
+                <div class="card my-3">
+                    <img src="{{ index .Params "featured-image" }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ .Title }}</h5>
+                        <p class="card-text">{{ .Summary }}</p>
+                        <p class="text-start"><a href="{{ .RelPermalink }}" class="read-more">[ Read More ]</a></p>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+
+    </div>
+</div>
+{{ end }}
