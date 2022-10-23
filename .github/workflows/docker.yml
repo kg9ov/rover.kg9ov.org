@@ -64,4 +64,5 @@ jobs:
         env:
           TOKEN: ${{ secrets.WATCHTOWER_TOKEN }}
           ENDPOINT: ${{ secrets.WATCHTOWER_ENDPOINT }}
-        run: curl -i -H "Authorization: Bearer $TOKEN" $ENDPOINT
+        run: |
+          curl -i -H "Authorization: Bearer $TOKEN" $ENDPOINT
