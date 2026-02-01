@@ -1,17 +1,25 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <img class="img-fluid w-100" src="/img/rover-header.jpg"></img>
-        </div>
-        <div class="col">
-            <div class="my-3 px-5 py-2 bg-primary bg-opacity-75 text-white" style="border-radius: 1rem">
-                <p><span class="h1">rover</span> <span class="fs-5 fw-lighter">/ˈrōvər/</span></p>
-                <p><em>noun</em></p>
-                <ol>
-                    <li>A self-contained Amateur Radio station that moves between multiple
-                        locations during a contest or to activate a sparsely populated grid.</li>
-                </ol>
+<div class="container mb-3">
+    {{ if .IsHome }}
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid w-100" src="/img/rover-header-dark.jpg"></img>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col">
+                <div class="my-3 p-2 rounded-3 text-bg-secondary">
+                    <p class="text-center fs-2 fst-italic fw-lighter">
+                    Documenting the trials and tribulations of building, modifying, breaking,
+                    repairing, operating, cussing, and sometimes even enjoying a rover.
+                    </p>
+                </div>
+            </div>
+        </div>
+    {{ else }}
+        <div class="row border-bottom border-5 pb-2">
+            <div class="col">
+                <img class="img-fluid w-100" src="/img/rover-header-slim.jpg"></img>
+            </div>
+        </div>
+    {{ end }}
 </div>

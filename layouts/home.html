@@ -2,10 +2,10 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
 
-        {{ range .Site.RegularPages }}
+        {{ range where .Site.RegularPages "Section" "contest" }}
             <div class="col">
                 <div class="card my-3">
-                    <img src="{{ index .Params "featured-image" }}" class="card-img-top" alt="...">
+                    <img src="{{ (.Resources.Get (index .Params "featured-image")).RelPermalink }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ .Title }}</h5>
                         <p class="card-text">{{ .Content | strings.Truncate 400 | plainify }}</p>

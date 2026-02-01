@@ -5,10 +5,14 @@
             <h1 class="mt-4 mb-4 border-bottom">{{ .Title | markdownify }}</h1>
         </div>
         <div class="col-12">
+            {{ if eq .Section "contest" }}
             <div class="clearfix">
-                <img class="col-12 col-md-5 float-md-end mb-3 ms-md-3" src="{{ index .Params "featured-image" }}" alt="...">
+                <img class="col-12 col-md-5 float-md-end mb-3 ms-md-3" src="{{ (.Resources.Get (index .Params "featured-image")).RelPermalink }}" alt="...">
                 {{ .Content }}
             </div>
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
         </div>
     </div>
 </div>

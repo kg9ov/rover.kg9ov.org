@@ -10,3 +10,9 @@ disableKinds:
   - RSS
   # sitemap.xml
   - sitemap
+
+markup:
+  goldmark:
+    renderHooks:
+      link:
+        useEmbedded: always

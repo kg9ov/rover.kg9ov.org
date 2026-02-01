@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md">
+  <div class="container bg-body-secondary">
+    <a class="nav-link d-md-none" href="{{ .Site.Home.RelPermalink }}">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <div class="navbar-nav">
+        <a class="nav-link{{ if .IsHome }} active{{ end }} d-none d-md-block"{{ if .IsHome }} aria-current="page"{{ end }} href="{{ .Site.Home.RelPermalink }}">Home</a>
+        {{- $p := . }}
+        {{ range site.Menus.main }}
+          {{- $active := $p.IsMenuCurrent "main" . -}}
+          <a class="nav-link{{ if $active }} active" aria-current="page{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</nav>
